@@ -1,0 +1,1 @@
+This is an example of Pipress, a revolutionary new “compression” algorithm.

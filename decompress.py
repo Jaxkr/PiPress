@@ -2,14 +2,19 @@ import json
 import sys
 import binascii
 import msgpack
-import quopri
+import ntpath
 
 with open(sys.argv[1], 'rb') as myfile:
     input_string=myfile.read()
 
+def path_leaf(path):
+    head, tail = ntpath.split(path)
+    return tail or ntpath.basename(head)
 
 input_object = msgpack.unpackb(input_string, encoding='utf-8')
 pi_string = ""
+file_output_name = path_leaf(sys.argv[1])[:-8]
+print(file_output_name)
 
 with open('pi-billion.txt', 'r') as myfile:
     pi_string=myfile.read().replace('\n', '')
@@ -28,4 +33,6 @@ for couple in data:
             char = chr(number)
             final_output_string += char
 
-print(final_output_string)
+
+output_file = open(file_output_name, 'wb')
+output_file.write(binascii.a2b_base64(final_output_string))

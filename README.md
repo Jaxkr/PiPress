@@ -1,34 +1,30 @@
 # Pipress
-Compression of text files in terms of Pi.
+Compression of files in terms of Pi.
 
 This is quite possibly the worst file storage algorithm ever made.
 Requires MessagePack and Python3.
 
 ### Powerful features:
-- ?
+- Nothing.
 
 ### Limitations:  
-- Can only "compress" ASCII or UTF-8 encoded text files.
-- Usually makes files 2 to 3 times larger.
+- Unbelievably slow. It took about 3 minutes to compress a 50kb image.
+- Usually makes files 3 to 5 times larger.
 - You need the 1 GB file [pi-billion.txt](https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt) in order for this to work.
 
-### Planned features:
-- Add support for arbitrary format binary files and folders of files.
+## Usage
+First, download [pi-billion.txt](https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt) and put it in the same folder as pipress.py. Then, `cd` into your pipress directory.
 
-## Example
+`python3 pipress.py yourinputfile.txt`
 
-Given the following input file:  
-`CHECK`
+This outputs yourinputfile.txt.pipress
 
-the following output will be produced:  
-`[[13731565, 7], [35842, 5]]`
+To decompress simply run the following:
 
-This tells the decompressor to look at the 13,731,565th digit of Pi and take 7 characters. Then, that 7 character integer will be converted to a 24 bit binary string, which is split into three 8 bit ints which are converted to ASCII using the `chr()` function.
+`python3 decompress.py yourinputfile.txt.pipress`
 
-This process is repeated for the second element. Regardless of number length, the Pi excerpt is always converted to a 24 bit int, and a byte of `00000000` is silently ignored.
+This will recreate the original file.
 
-This output is then packed to binary using MessagePack. The textual representation of this in hex is the following:  
-`9292ce00d186ed0792cd8c0205`
+This works with any binary file. Images, zip archives, you name it!
 
-
-Through the use of the Pipress algorithm we turned a 5 byte file to a 13 byte file. Incredible!
+Enjoy the future of compression.
