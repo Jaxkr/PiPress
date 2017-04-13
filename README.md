@@ -17,7 +17,7 @@ Requires MessagePack and Python3.
 Given the following input file:  
 `CHECK`
 
-the following output will be produced:
+the following output will be produced:  
 `[[13731565, 7], [35842, 5]]`
 
 This tells the decompressor to look at the 13,731,565th digit of Pi and take 7 characters. Then, that 7 character integer will be converted to a 24 bit binary string, which is split into three 8 bit ints which are converted to ASCII using the `chr()` function.
