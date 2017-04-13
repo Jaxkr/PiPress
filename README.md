@@ -4,18 +4,18 @@ Compression of text files in terms of Pi.
 This is quite possibly the worst file storage algorithm ever made.
 Requires MessagePack and Python3.
 
-## Powerful features:
+### Powerful features:
 - ?
 
-## Limitations:  
+### Limitations:  
 - Can only "compress" ASCII or UTF-8 encoded text files.
 - Usually makes files 2 to 3 times larger.
 - You need the 1 GB file [pi-billion.txt](https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt) in order for this to work.
 
-## Planned features:
+### Planned features:
 - Add support for arbitrary format binary files and folders of files.
 
-# Example
+## Example
 
 Given the following input file:  
 `CHECK`
