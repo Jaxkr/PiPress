@@ -12,6 +12,9 @@ Requires MessagePack and Python3.
 - Usually makes files 2 to 3 times larger.
 - You need the 1 GB file [pi-billion.txt](https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt) in order for this to work.
 
+## Planned features:
+- Add support for arbitrary format binary files and folders of files.
+
 # Example
 
 Given the following input file:  
